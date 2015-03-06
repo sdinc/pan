@@ -1,40 +1,31 @@
 # encoding: utf-8
 
-#require 'bundler/setup'
-
-#require 'rspec/core/rake_task'
-#RSpec::Core::RakeTask.new(:unit)
-
-#require 'kitchen'
-#desc 'Run Test Kitchen integration tests'
-#task :integration do
-#  Kitchen.logger = Kitchen.default_file_logger
-#  Kitchen::Config.new.instances.each do |instance|
-#    instance.test(:always)
-#  end
-#end
-
-
-puts '>>>>> Running in CI' unless ENV['CI']
+def run_command(command)
+  if File.exist?('Gemfile.lock')
+    sh %(bundle exec #{command})
+  else
+    sh %(chef exec #{command})
+  end
+end
 
 namespace :berks do
   desc 'vendor the cookbooks'
   task :vendor do
-    puts 'rm -rvf vendor Berksfile.lock'
-    puts 'berks vendor'
+    run_command('rm -rvf berks-cookbooks Berksfile.lock')
+    run_command('berks vendor')
   end
 end
 
 namespace :ci do
   desc 'run the unit tests'
   task :unit do 
-    puts 'Running rubocop'
-    puts 'Running foodcritic'
-    puts 'Running rspec'
+    run_command('rubocop')
+    run_command('foodcritic')
+    run_command('rspec')
   end
   desc 'run the integration tests'
   task :integration do 
-    puts 'Running kitchen test'
+    run_command('kitchen test')
   end
 end
 
