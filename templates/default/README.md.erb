@@ -6,6 +6,8 @@ TODO: Enter the cookbook description here.
 
 ### Tested And Validated On
 - Ubuntu 14.04
+- OSX 10.9.x
+TODO maybe support windows
 - Windows Server 2012 R2
 
 ## Usage
@@ -25,5 +27,12 @@ Include `<%= cookbook_name %>` in your run_list.
 ```
 
 ## Testing
+rake with no parameters does a berks vendor
 
-TODO: Write how you plan to test this cookbook.
+rake ci:unit
+*rubocop
+*knife foodcritic
+*rspec
+rake ci:integration
+*kitchen test
+

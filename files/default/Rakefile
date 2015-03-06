@@ -1,0 +1,43 @@
+# encoding: utf-8
+
+#require 'bundler/setup'
+
+#require 'rspec/core/rake_task'
+#RSpec::Core::RakeTask.new(:unit)
+
+#require 'kitchen'
+#desc 'Run Test Kitchen integration tests'
+#task :integration do
+#  Kitchen.logger = Kitchen.default_file_logger
+#  Kitchen::Config.new.instances.each do |instance|
+#    instance.test(:always)
+#  end
+#end
+
+
+puts '>>>>> Running in CI' unless ENV['CI']
+
+namespace :berks do
+  desc 'vendor the cookbooks'
+  task :vendor do
+    puts 'rm -rvf vendor Berksfile.lock'
+    puts 'berks vendor'
+  end
+end
+
+namespace :ci do
+  desc 'run the unit tests'
+  task :unit do 
+    puts 'Running rubocop'
+    puts 'Running foodcritic'
+    puts 'Running rspec'
+  end
+  desc 'run the integration tests'
+  task :integration do 
+    puts 'Running kitchen test'
+  end
+end
+
+# The default rake task should just pull all cookbooks cleanly
+task default: ['berks:vendor']
+

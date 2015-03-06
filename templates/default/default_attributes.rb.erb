@@ -1,1 +1,3 @@
 default['<%= @attribute_context %>']['file_cache_path'] = File.join(Chef::Config['file_cache_path'], '<%= @attribute_context %>')
+
+default['<%= @attribute_context %>']['install_aptitude'] = 'yes'

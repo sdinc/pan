@@ -5,8 +5,9 @@ pan is an example cookbook generator
 ## Supported Platforms
 
 ### Tested And Validated On
-* Mac OSX 10.10 with ChefDK 0.3.6
-* Windows 7 with ChefDK 0.3.6
+* Ubuntu 14.04 with chefDK 0.4.0
+* Mac OSX 10.10 with ChefDK 0.4.0
+* Windows 7 with ChefDK 0.4.0
 
 ## Usage
 
