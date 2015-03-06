@@ -27,7 +27,8 @@ files_basic = [
   'Rakefile',
   'VERSION',
   'rvmrc',
-  '.gitignore'
+  '.gitignore',
+  '.rubocop.yml'
 ]
 files_basic.each do |file|
   cookbook_file File.join(cookbook_dir, file) do
@@ -88,4 +89,3 @@ template "#{cookbook_dir}/test/integration/default/default_spec.rb" do
   helpers(ChefDK::Generator::TemplateHelper)
   action :create_if_missing
 end
-

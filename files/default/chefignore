@@ -102,6 +102,7 @@ rvmrc
 .ruby-version
 Gemfile
 Gemfile.lock
+.rubocop.yml
 
 # test kitchen #
 ################

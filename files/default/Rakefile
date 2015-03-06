@@ -18,17 +18,16 @@ end
 
 namespace :ci do
   desc 'run the unit tests'
-  task :unit do 
+  task :unit do
     run_command('rubocop')
     run_command('foodcritic')
     run_command('rspec')
   end
   desc 'run the integration tests'
-  task :integration do 
+  task :integration do
     run_command('kitchen test')
   end
 end
 
 # The default rake task should just pull all cookbooks cleanly
 task default: ['berks:vendor']
-
