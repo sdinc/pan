@@ -20,8 +20,9 @@ namespace :ci do
   desc 'run the unit tests'
   task :unit do
     run_command('rubocop')
-    run_command('foodcritic')
-    run_command('rspec')
+    run_command('foodcritic . ')
+    # run_command('rspec --format RspecJunitFormatter  --out rspec.xml')
+    run_command('rspec ')
   end
   desc 'run the integration tests'
   task :integration do

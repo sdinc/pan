@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'chefspec'
-gem 'rspec'
+gem 'rspec_junit_formatter'
 gem 'rubocop'
 gem 'berkshelf'
-gem 'test-kitchen'
-gem 'kitchen-vagrant'
+# needed for foodcritic to work
+gem 'gherkin'
+# gem 'test-kitchen'
+# gem 'kitchen-vagrant'
