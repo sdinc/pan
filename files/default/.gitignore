@@ -49,12 +49,6 @@ a.out
 ###########
 .watchr
 .rspec
-spec/*
-spec/fixtures/*
-test/*
-features/*
-Guardfile
-Procfile
 
 # Berkshelf #
 #############
