@@ -84,7 +84,7 @@ template "#{cookbook_dir}/test/integration/default/serverspec/spec_helper.rb" do
   action :create_if_missing
 end
 
-template "#{cookbook_dir}/test/integration/default/default_spec.rb" do
+template "#{cookbook_dir}/test/integration/default/serverspec/default_spec.rb" do
   source 'server_default_spec.rb.erb'
   helpers(ChefDK::Generator::TemplateHelper)
   action :create_if_missing
