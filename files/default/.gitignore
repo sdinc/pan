@@ -53,6 +53,7 @@ a.out
 # Berkshelf #
 #############
 Berksfile.lock
+berks-cookbooks/*
 cookbooks/*
 vendor/*
 tmp
