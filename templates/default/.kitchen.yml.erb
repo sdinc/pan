@@ -5,18 +5,24 @@ driver:
 provisioner:
   name: chef_zero
 
+# platforms:
+#  - name: ubuntu-14.04
+# specific to run on asus labby
 platforms:
-  - name: ubuntu-14.04
+  - name: ub-14.04-i386
+    driver:
+      box: ub-14.04-i386
+      box_url: https://cloud-images.ubuntu.com/vagrant/utopic/current/utopic-server-cloudimg-i386-vagrant-disk1.box
 
-  - name: windows-2012r2
-    transport:
-      name: winrm
-      port: 5985
-      username: vagrant
-      password: vagrant
-    driver_config:
-      box: windows2012r2
-      box_url: http://my.storage.example.com/path/to/windows2012r2.box
+#  - name: windows-2012r2
+#    transport:
+#      name: winrm
+#      port: 5985
+#      username: vagrant
+#      password: vagrant
+#    driver_config:
+#      box: windows2012r2
+#      box_url: http://localhost/windows2012r2.box
 
 suites:
   - name: default
