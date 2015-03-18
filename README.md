@@ -1,4 +1,4 @@
-# pan code_generator
+# pan chef cookbook template
 
 pan is an example cookbook generator
 
