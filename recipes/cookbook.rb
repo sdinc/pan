@@ -1,5 +1,6 @@
 context = ChefDK::Generator.context
 cookbook_dir = File.join(context.cookbook_root, context.cookbook_name)
+chef_dir = File.join(context.cookbook_root, context.cookbook_name, '.chef')
 attribute_context = context.cookbook_name.gsub(/-/, '_')
 
 # Create cookbook directories
@@ -10,7 +11,8 @@ cookbook_directories = [
   'files/default',
   'test/integration/default/serverspec',
   'test/fixures/data_bags',
-  'spec/recipes'
+  'spec/recipes',
+  '.chef'
 ]
 cookbook_directories.each do |dir|
   directory File.join(cookbook_dir, dir) do
@@ -30,10 +32,15 @@ files_basic = [
   '.gitignore',
   '.rubocop.yml'
 ]
+
 files_basic.each do |file|
   cookbook_file File.join(cookbook_dir, file) do
     action :create_if_missing
   end
+end
+
+cookbook_file File.join(chef_dir, 'knife.rb') do
+  action :create_if_missing
 end
 
 # Create basic files from template

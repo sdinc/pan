@@ -1,10 +1,21 @@
 source 'https://rubygems.org'
 
-gem 'chefspec'
-gem 'rspec_junit_formatter'
-gem 'rubocop'
+gem 'bundler', '1.10.5'
+
+# cloud providers
+gem 'chef'
+gem 'kitchen-ec2'
+#gem 'kitchen-google'
+#gem 'kitchen-rackspace'
+gem 'knife-ec2'
+#gem 'knife-google'
+#gem 'knife-rackspace'
+
+# testing tools
 gem 'berkshelf'
-# needed for foodcritic to work
-gem 'gherkin'
-# gem 'test-kitchen'
-# gem 'kitchen-vagrant'
+gem 'robocop'
+gem 'chefspec'
+gem 'test-kitchen'
+gem 'foodcritic'
+
+

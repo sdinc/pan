@@ -1,12 +1,14 @@
 # encoding: utf-8
 
 def run_command(command)
-  if File.exist?('Gemfile.lock')
+  if File.exist?('Gemfile.lock')te
     sh %(bundle exec #{command})
   else
     sh %(chef exec #{command})
   end
 end
+
+
 
 namespace :berks do
   desc 'vendor the cookbooks'
