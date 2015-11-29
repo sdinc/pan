@@ -1,13 +1,15 @@
-# pan code_generator
+# pan chef cookbook template
 
 pan is an example cookbook generator
 
 ## Supported Platforms
 
 ### Tested And Validated On
-* Ubuntu 14.04 with chefDK 0.4.0
-* Mac OSX 10.10 with ChefDK 0.4.0
-* Windows 7 with ChefDK 0.4.0
+* Ubuntu 14.04 with chefDK 0.10.0 
+
+### Should work on 
+* Mac OSX 10.10 with ChefDK 0.10.0 VirtualBox-4.3.26-98988-OSX.dmg  Vagrant 1.7.2
+* Windows 7 with ChefDK 0.10.0 Virtualbox-x.x Vagrant-x.x
 
 ## Usage
 
